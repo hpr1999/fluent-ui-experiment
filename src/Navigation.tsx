@@ -5,10 +5,8 @@ import React, { Fragment } from "react";
 const navLinkGroups: INavLinkGroup[] = [
   {
     links: [
-      {
-        name: "Todo",
-        url: "http://localhost:3000",
-      },
+      { name: "Home", url: "/" },
+      { name: "Todo", url: "/todo" },
     ],
   },
 ];
@@ -23,5 +21,10 @@ const separatorStyle = {
 };
 
 export default function Navigation() {
-  return <Fragment><Separator styles={separatorStyle}></Separator><Nav groups={navLinkGroups} /></Fragment>;
+  return (
+    <Fragment>
+      <Separator styles={separatorStyle}></Separator>
+      <Nav groups={navLinkGroups} />
+    </Fragment>
+  );
 }

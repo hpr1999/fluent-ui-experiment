@@ -10,6 +10,7 @@ import {
 import React, { CSSProperties, Fragment, useState } from "react";
 import Todo from "./Todo";
 import { NeutralColors } from "@fluentui/theme";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 initializeIcons();
 const theme = getTheme();
@@ -51,7 +52,16 @@ function App() {
             <Navigation />
           </Panel>
         </div>
-        <Todo />
+        <div>
+          <BrowserRouter>
+            <Switch>
+              <Route exact path="/"></Route>
+              <Route exact path="/todo">
+                <Todo />
+              </Route>
+            </Switch>
+          </BrowserRouter>
+        </div>
       </div>
     </Fragment>
   );
