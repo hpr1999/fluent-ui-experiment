@@ -48,7 +48,7 @@ export default function Container(props: IContainerProps) {
   };
 
   const childProps = Object.fromEntries(
-    Object.entries(props).filter(([key, value]) => key !== "styles")
+    Object.entries(props).filter(([key]) => key !== "styles")
   );
 
   return <Stack styles={styles} {...childProps}></Stack>;
