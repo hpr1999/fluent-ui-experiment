@@ -6,7 +6,7 @@ const navLinkGroups: INavLinkGroup[] = [
   {
     links: [
       { name: "Home", url: "/" },
-      { name: "Todo", url: "/todo" },
+      { name: "To-Do", url: "/todo" },
     ],
   },
 ];

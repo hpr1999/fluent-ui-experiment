@@ -1,4 +1,4 @@
-import Navigation from "./Navigation";
+import Navigation from "./components/Navigation";
 import {
   ActionButton,
   getTheme,
@@ -8,9 +8,10 @@ import {
   Text,
 } from "@fluentui/react";
 import React, { CSSProperties, Fragment, useState } from "react";
-import Todo from "./Todo";
+import Todo from "./components/Todo";
 import { NeutralColors } from "@fluentui/theme";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from "./components/Home";
 
 initializeIcons();
 const theme = getTheme();
@@ -55,7 +56,9 @@ function App() {
         <div>
           <BrowserRouter>
             <Switch>
-              <Route exact path="/"></Route>
+              <Route exact path="/">
+                <Home />
+              </Route>
               <Route exact path="/todo">
                 <Todo />
               </Route>
