@@ -12,7 +12,7 @@ import {
   TooltipHost,
 } from "@fluentui/react";
 import { NeutralColors } from "@fluentui/theme";
-import React, { CSSProperties, Fragment, useState, ReactElement } from "react";
+import React, { useState, ReactElement } from "react";
 import Container from "./Container";
 
 const theme = getTheme();

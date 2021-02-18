@@ -1,6 +1,6 @@
 import { DefaultEffects, IStackProps, Stack } from "@fluentui/react";
 import { NeutralColors } from "@fluentui/theme";
-import React, { CSSProperties } from "react";
+import React from "react";
 
 export interface IContainerProps extends IStackProps {
   depth?: number;
@@ -34,19 +34,21 @@ function elevationForDepth(depth: number | undefined) {
 }
 
 export default function Container(props: IContainerProps) {
+  let propRootStyles =
+    typeof props.styles === "object" && typeof props.styles.root === "object"
+      ? props.styles.root
+      : {};
+
   const styles = {
     root: {
       ...containerStyle.root,
       boxShadow: elevationForDepth(props.depth),
-      ...(typeof props.styles === "object" &&
-      typeof props.styles.root === "object"
-        ? props.styles.root
-        : {}),
+      ...propRootStyles,
     },
   };
 
   const childProps = Object.fromEntries(
-    Object.entries(props).filter(([key, value]) => key != "styles")
+    Object.entries(props).filter(([key, value]) => key !== "styles")
   );
 
   return <Stack styles={styles} {...childProps}></Stack>;
